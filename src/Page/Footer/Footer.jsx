@@ -7,7 +7,7 @@ import FooterImage from '../../assets/images/logo.png'
 const Footer = () => {
   return (
     <div className="bg-[#001931]">
-      <div className="w-full max-w-360 mx-auto py-8 px-5  text-white text-center">
+      <div className="w-full max-w-360 mx-auto py-8 px-5 sm:px-0  text-white text-center">
         <div className="flex justify-between items-center">
           <div className="flex gap-1 items-center">
             <img className="w-10 h-10" src={FooterImage} alt="" />

@@ -37,7 +37,7 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               {navItem.map((item) => (
-                <li className="mb-1">
+                <li key={item.id} className="mb-1">
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
@@ -62,7 +62,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             {navItem.map((item) => (
-              <li className="mr-8">
+              <li key={item.id} className="mr-8">
                 <NavLink
                   to={item.path}
                   className={({ isActive }) =>

@@ -6,7 +6,7 @@ import TrendingApps from "../TrendingApps/TrendingApps";
 const HomePage = () => {
   return (
     <div>
-      <Banner />
+      {/* <Banner /> */}
       <Stats />
       <TrendingApps/>
     </div>
