@@ -1,3 +1,4 @@
+
 import { Link } from "react-router";
 import ErrorImage from "../../assets/images/error-404.png";
 const NotFound = () => {
@@ -10,7 +11,7 @@ const NotFound = () => {
         <h2 className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           Oops, page not found!
         </h2>
-        <p className="text-xl text-[[#627382] my-2">
+        <p className="text-xl text-[#627382] my-2">
           The page you are looking for is not available.
         </p>
       </div>
