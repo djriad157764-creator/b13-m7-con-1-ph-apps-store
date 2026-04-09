@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaGithub } from "react-icons/fa";
 import Logo from "../../assets/images/logo.png";
 import { NavLink } from "react-router";

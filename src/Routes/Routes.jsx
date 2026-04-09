@@ -4,15 +4,18 @@ import { Children } from "react";
 import Installation from "../Page/Installation/Installation";
 import Apps from "../Page/Apps/Apps";
 import HomePage from "../Page/Home/HomePage/HomePage";
+import AppDetails from "../Page/AppDetails/AppDetails";
+
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
     children: [
-    {index:true,Component:HomePage},
+      { index: true, Component: HomePage },
       { path: "apps", Component: Apps },
-      { path: "installation", Component: Installation }
+      { path: "installation", Component: Installation },
+      { path: "/apps/:id", Component:AppDetails  },
     ],
   },
 ]);

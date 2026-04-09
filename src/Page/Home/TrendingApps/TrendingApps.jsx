@@ -2,9 +2,10 @@ import React from "react";
 import useAppData from "../../../Hooks/useAppData";
 import Card from "../../../Shared/Card";
 import { NavLink } from "react-router";
+import { HashLoader } from "react-spinners";
 
 const TrendingApps = () => {
-  const [data] = useAppData();
+  const [data, loading] = useAppData();
 
   return (
     <div className="bg-base-200 px-5  xl:px-0">
@@ -18,11 +19,18 @@ const TrendingApps = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 mx-auto gap-6 ">
-          {data.slice(0,8).map((card, index) => (
-            <Card key={index} card={card} />
-          ))}
-        </div>
+        {loading ?
+          <div className="mx-auto flex justify-center items-center">
+            <h1>
+              <HashLoader />
+            </h1>
+          </div>
+        : <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 mx-auto gap-6 ">
+            {data.slice(0, 8).map((card, index) => (
+              <Card key={index} card={card} />
+            ))}
+          </div>
+        }
       </div>
       <div className="flex justify-center mt-10 mb-20">
         <NavLink to={"/apps"}>

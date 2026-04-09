@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div>
       {/* <Banner /> */}
-      <Stats />
+      {/* <Stats /> */}
       <TrendingApps/>
     </div>
   );
