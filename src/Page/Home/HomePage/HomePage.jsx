@@ -6,9 +6,9 @@ import TrendingApps from "../TrendingApps/TrendingApps";
 const HomePage = () => {
   return (
     <div>
-      {/* <Banner /> */}
-      {/* <Stats /> */}
-      <TrendingApps/>
+      <Banner />
+      <Stats />
+      <TrendingApps />
     </div>
   );
 };

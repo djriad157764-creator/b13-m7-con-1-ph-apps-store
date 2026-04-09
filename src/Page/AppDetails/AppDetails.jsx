@@ -1,12 +1,12 @@
 import useAppData from "../../Hooks/useAppData";
 import { useParams } from "react-router";
-import { MdOutlineFileDownload } from "react-icons/md";
-import { AiFillLike } from "react-icons/ai";
-import { IoMdStar } from "react-icons/io";
 import RattingChart from "../RattingChart/RattingChart";
 import { HashLoader } from "react-spinners";
 import { useContext } from "react";
 import { InstallAppArray } from "../../InstalledApp/installedApp";
+import DownloadImage from "../../assets/images/icon-downloads.png";
+import ReviewImage from "../../assets/images/icon-review.png";
+import RattingImage from "../../assets/images/icon-ratings.png";
 import { toast } from "react-toastify";
 
 const AppDetails = () => {
@@ -70,8 +70,8 @@ const AppDetails = () => {
 
               <div className="flex items-center gap-10  ">
                 <div className="">
-                  <div className="bg-linear-to-r from-[#54CF68] to-[#00827A] p-1 rounded-md inline-block">
-                    <MdOutlineFileDownload className="text-white text-2xl md:text-3xl lg:text-4xl" />
+                  <div className=" p-1 rounded-md inline-block">
+                    <img className="" src={DownloadImage} alt="" />
                   </div>
                   <p className="text-[12px] sm:text-[14px] lg:text-base">
                     Downloads
@@ -82,18 +82,18 @@ const AppDetails = () => {
                 </div>
                 <div className="">
                   <div className="bg-white p-1 rounded-md inline-block ">
-                    <IoMdStar className="text-4xl text-[#FF8811]" />
+                    <img src={RattingImage} alt="" />
                   </div>
-                  <p>Downloads</p>
+                  <p>Average Ratings</p>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-[#001931]">
                     {app?.ratingAvg}
                   </h3>
                 </div>
                 <div className="">
-                  <div className="bg-linear-to-r from-[#632EE3] to-[#9F62F2] p-1 rounded-md inline-block">
-                    <AiFillLike className="text-white text-4xl" />
+                  <div className="">
+                    <img className="" src={ReviewImage} alt="" />
                   </div>
-                  <p>Downloads</p>
+                  <p>Total Reviews</p>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-[#001931]">
                     {app?.reviews}
                   </h3>
@@ -102,10 +102,9 @@ const AppDetails = () => {
               <div className="">
                 <button
                   onClick={handleDownloadBtn}
-                  className="btn bg-[#00D390] text-white md:text-lg text-base lg:text-xl font-semibold p-3 sm:p-4 md:p-5 lg:p-6 rounded-sm mt-7.5
-             "
+                  className={`btn bg-[#00D390] text-white md:text-lg text-base lg:text-xl font-semibold p-3 sm:p-4 md:p-5 lg:p-6 rounded-sm mt-7.5 ${exitingApp && "opacity-70 cursor-not-allowed"}`}
                 >
-                  Install Now (${app?.size} MB)
+                  {exitingApp ? "Installed" : `Install Now (${app?.size} MB)`}
                 </button>
               </div>
             </div>
