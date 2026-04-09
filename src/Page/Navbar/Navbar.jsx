@@ -37,12 +37,12 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               {navItem.map((item) => (
-                <li key={item.id} className="mb-1">
+                <li key={item.id} className="mb-2">
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
                       isActive ?
-                        "bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent font-semibold text-base border-b-2 p-0 w-fit rounded-none border-[#632EE3] "
+                        "bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent font-semibold text-base  p-0 w-fit rounded-none  "
                       : "font-medium text-base p-0 "
                     }
                   >
