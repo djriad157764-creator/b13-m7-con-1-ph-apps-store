@@ -1,4 +1,3 @@
-import React from "react";
 import useAppData from "../../Hooks/useAppData";
 import { useParams } from "react-router";
 import { MdOutlineFileDownload } from "react-icons/md";
@@ -6,14 +5,38 @@ import { AiFillLike } from "react-icons/ai";
 import { IoMdStar } from "react-icons/io";
 import RattingChart from "../RattingChart/RattingChart";
 import { HashLoader } from "react-spinners";
+import { useContext } from "react";
+import { InstallAppArray } from "../../InstalledApp/installedApp";
+import { toast } from "react-toastify";
 
 const AppDetails = () => {
   const { id } = useParams();
   const [appDetails, loading] = useAppData();
+  const [apps, setApps] = useContext(InstallAppArray);
+
+  if (loading) {
+    return (
+      <div className="mx-auto min-h-screen flex justify-center items-center">
+        <HashLoader />
+      </div>
+    );
+  }
+
   const app = appDetails.find((app) => app.id === parseInt(id));
 
   const ratings = app?.ratings;
-  console.log(app);
+
+  const exitingApp = app ? apps.some((item) => item.id === app.id) : false;
+
+  const handleDownloadBtn = () => {
+    if (exitingApp) {
+      toast.warning("Already Installed");
+      return;
+    } else {
+      setApps([...apps, app]);
+      toast.success(`${app?.title} App added to installation list!`);
+    }
+  };
 
   return loading ?
       <div className="mx-auto min-h-screen flex justify-center items-center">
@@ -78,10 +101,11 @@ const AppDetails = () => {
               </div>
               <div className="">
                 <button
+                  onClick={handleDownloadBtn}
                   className="btn bg-[#00D390] text-white md:text-lg text-base lg:text-xl font-semibold p-3 sm:p-4 md:p-5 lg:p-6 rounded-sm mt-7.5
              "
                 >
-                  Install Now ({app?.size} MB)
+                  Install Now (${app?.size} MB)
                 </button>
               </div>
             </div>
