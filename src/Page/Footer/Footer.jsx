@@ -2,7 +2,7 @@ import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 import { TiSocialFacebook } from "react-icons/ti";
-import FooterImage from '../../assets/images/logo.png'
+import FooterImage from "../../assets/images/logo.png";
 
 const Footer = () => {
   return (
@@ -16,9 +16,15 @@ const Footer = () => {
           <div className="">
             <h3 className="font-medium text-xl mb-4">Social Links</h3>
             <div className="flex items-center gap-4">
-              <RiTwitterXFill />
-              <FaLinkedinIn />
-              <TiSocialFacebook />
+              <div className="bg-white p-2 rounded-full cursor-pointer">
+                <RiTwitterXFill className="text-xl  text-black  " />
+              </div>
+              <div className="bg-white p-2 rounded-full cursor-pointer">
+                <FaLinkedinIn className="text-xl  text-black" />
+              </div>
+              <div className="bg-white p-2 rounded-full cursor-pointer">
+                <TiSocialFacebook className="text-xl  text-black " />
+              </div>
             </div>
           </div>
         </div>

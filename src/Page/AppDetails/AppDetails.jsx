@@ -16,7 +16,7 @@ const AppDetails = () => {
   console.log(app);
 
   return loading ?
-      <div className="mx-auto flex justify-center items-center">
+      <div className="mx-auto min-h-screen flex justify-center items-center">
         <h1>
           <HashLoader />
         </h1>

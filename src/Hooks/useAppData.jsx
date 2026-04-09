@@ -11,7 +11,7 @@ const useAppData = () => {
       setTimeout(() => {
         setFetchData(data);
         setLoader(false);
-      }, 1500);
+      }, 500);
     };
     fetchDataFromPublic();
   }, []);
