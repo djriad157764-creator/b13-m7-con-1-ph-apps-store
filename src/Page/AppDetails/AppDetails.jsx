@@ -49,7 +49,7 @@ const AppDetails = () => {
           <div className=" lg:flex  items-center  gap-10 w-full max-w-360 mx-auto pt-20">
             <div className="bg-white rounded-md">
               <img
-                className="w-80 p-7.5 mx-auto object-cover bg-white rounded-full"
+                className="w-60 p-7.5 mx-auto object-cover bg-white rounded-full"
                 src={app?.image}
                 alt=""
               />

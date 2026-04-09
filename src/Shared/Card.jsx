@@ -8,10 +8,10 @@ const Card = ({ card }) => {
 
   return (
     <Link to={`/apps/${card.id}`}>
-      <div className="text-center flex flex-col  p-4 w-full bg-white rounded-2xl shadow-md">
+      <div className="text-center  flex flex-col  p-4  bg-white rounded-2xl shadow-md">
         <div className="flex-1">
           <img
-            className="object-cover rounded-xl mx-auto"
+            className="object-cover w-20  rounded-xl mx-auto"
             src={card.image}
             alt=""
           />
