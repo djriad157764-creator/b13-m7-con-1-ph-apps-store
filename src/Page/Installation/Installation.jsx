@@ -4,7 +4,7 @@ import InstallAppDetails from "./InstallAppDetails";
 import VectorImage from "../../assets/images/Vector (1).png";
 
 const Installation = () => {
-  const [apps, setApps] = useContext(InstallAppArray);
+  const [apps] = useContext(InstallAppArray);
   const [sortType, setSortType] = useState("");
 
   const sortedApps = [...apps].sort((a, b) => {

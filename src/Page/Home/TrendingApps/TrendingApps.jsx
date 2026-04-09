@@ -2,7 +2,7 @@ import React from "react";
 import useAppData from "../../../Hooks/useAppData";
 import Card from "../../../Shared/Card";
 import { NavLink } from "react-router";
-import { HashLoader } from "react-spinners";
+import SpinnerMorph from "../../../components/ui/spinner-morph";
 
 const TrendingApps = () => {
   const [data, loading] = useAppData();
@@ -22,7 +22,7 @@ const TrendingApps = () => {
         {loading ?
           <div className="mx-auto flex justify-center items-center">
             <h1>
-              <HashLoader />
+              <SpinnerMorph />
             </h1>
           </div>
         : <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 mx-auto gap-6 ">

@@ -1,13 +1,13 @@
 import useAppData from "../../Hooks/useAppData";
 import { useParams } from "react-router";
 import RattingChart from "../RattingChart/RattingChart";
-import { HashLoader } from "react-spinners";
 import { useContext } from "react";
 import { InstallAppArray } from "../../InstalledApp/installedApp";
 import DownloadImage from "../../assets/images/icon-downloads.png";
 import ReviewImage from "../../assets/images/icon-review.png";
 import RattingImage from "../../assets/images/icon-ratings.png";
 import { toast } from "react-toastify";
+import SpinnerMorph from "../../components/ui/spinner-morph";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -17,7 +17,7 @@ const AppDetails = () => {
   if (loading) {
     return (
       <div className="mx-auto min-h-screen flex justify-center items-center">
-        <HashLoader />
+        <SpinnerMorph />
       </div>
     );
   }
@@ -41,7 +41,7 @@ const AppDetails = () => {
   return loading ?
       <div className="mx-auto min-h-screen flex justify-center items-center">
         <h1>
-          <HashLoader />
+          <SpinnerMorph />
         </h1>
       </div>
     : <div className="bg-base-200">
@@ -124,3 +124,6 @@ const AppDetails = () => {
 };
 
 export default AppDetails;
+
+
+

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "../../Shared/Card";
 import useAppData from "../../Hooks/useAppData";
 import { IoMdSearch } from "react-icons/io";
-import { HashLoader } from "react-spinners";
+import SpinnerMorph from "../../components/ui/spinner-morph";
 
 const Apps = () => {
   const [search, setSearch] = useState("");
@@ -52,7 +52,7 @@ const Apps = () => {
           {loading ?
             <div className="mx-auto flex justify-center items-center">
               <h1>
-                <HashLoader />
+                <SpinnerMorph />
               </h1>
             </div>
           : !loading && search !== "" && filteredData.length === 0 ?
